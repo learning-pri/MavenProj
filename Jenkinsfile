@@ -8,8 +8,10 @@ pipeline {
             }
         }
         stage('Test') {
-            steps {
-                echo 'Testing..'
+	        steps {
+	        	withMaven (maven : 'maven_3_0_5') {
+		 			sh 'mvn test'
+		 		}
             }
         }
         stage('Deploy') {
@@ -19,3 +21,4 @@ pipeline {
         }
     }
 }
+
