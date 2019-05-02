@@ -20,7 +20,7 @@ pipeline {
 	 stages ('Deployment Stage') {
 	 steps {
 	 		withMaven (maven : 'maven_3_0_5') {
-	 			sh 'mvn deploy'
+	 			sh 'mvn clean package'
 	 		}
 	 	}
 	}
