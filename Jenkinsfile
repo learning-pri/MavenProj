@@ -2,6 +2,17 @@ pipeline {
     agent any
 
     stages {
+     	stage ('Init') {
+            steps {
+                echo "Init result: ${currentBuild.result}"
+                echo "Init currentResult: ${currentBuild.currentResult}"
+            }
+            post {
+                always {
+                    echo "Post-Init result: ${currentBuild.result}"
+                    echo "Post-Init currentResult: ${currentBuild.currentResult}"
+                }
+        }
         stage('Build') {
             steps {
                 sh 'mvn clean compile'
