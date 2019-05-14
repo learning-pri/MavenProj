@@ -16,7 +16,7 @@ pipeline {
             steps {
                 sh 'mvn clean package'
                 sh 'cd target'
-                sh 'cp MavenProj-0.0.1-SNAPSHOT.jar /tmp/'
+                sh 'cp target/MavenProj-0.0.1-SNAPSHOT.jar /tmp/'
             }
         }
     }
