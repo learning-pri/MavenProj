@@ -27,14 +27,14 @@ pipeline {
         stage('Deploy') {
             steps {
               //  if(${currentBuild.currentResult} == "SUCCESS" || ${currentBuild.currentResult} == "UNSTABLE"){
-				    if (isUnix()) {
+			  //    if (isUnix()) {
 						sh 'echo "Build Succeded."'
 				        sh 'mvn clean package'
        			        sh 'cd target'
                 		sh 'cp target/MavenProj-0.0.1-SNAPSHOT.jar /tmp/'
-				      }else{
-				        bat 'echo "Build Succeded."'
-				      }
+			//	      }else{
+			//	        bat 'echo "Build Succeded."'
+			//	      }
 		   //  	}
             }
         }
