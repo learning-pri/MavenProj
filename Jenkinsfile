@@ -26,7 +26,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                if(${currentBuild.currentResult} == "SUCCESS" || ${currentBuild.currentResult} == "UNSTABLE"){
+                if("${currentBuild.currentResult}" == "SUCCESS" || "${currentBuild.currentResult}" == "UNSTABLE"){
 				    if (isUnix()) {
 						sh 'echo "Build Succeded."'
 				        sh 'mvn clean package'
