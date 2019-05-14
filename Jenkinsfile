@@ -11,6 +11,7 @@ pipeline {
                 always {
                     echo "Post-Init result: ${currentBuild.result}"
                     echo "Post-Init currentResult: ${currentBuild.currentResult}"
+                	}
                 }
         }
         stage('Build') {
