@@ -32,10 +32,8 @@ pipeline {
             steps {
               //  if(${currentBuild.currentResult} == "SUCCESS" || ${currentBuild.currentResult} == "UNSTABLE"){
 			  //    if (isUnix()) {
-						sh 'echo "Build Succeded."'
-				        sh 'mvn clean package'
-       			        sh 'cd target'
-                		sh 'cp target/MavenProj-0.0.1-SNAPSHOT.jar /tmp/'
+				sh 'echo "Build Succeded."'
+			        sh 'mvn clean package'
 			//	      }else{
 			//	        bat 'echo "Build Succeded."'
 			//	      }
