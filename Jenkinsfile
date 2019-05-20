@@ -16,16 +16,16 @@ pipeline {
         }
         stage('Build') {
             steps {
-                withMaven(maven: 'maven_3_0_5') {
+             //   withMaven(maven: 'maven_3_0_5') {
 					sh 'mvn clean compile'
-                }
+            //    }
             }
         }
         stage('Test') {
 	        steps {
-	      	  withMaven(maven: 'maven_3_0_5') {
+	      //	  withMaven(maven: 'maven_3_0_5') {
 	 				sh 'mvn test'
-	 			}
+	 	//		}
             }
         }
         stage('Deploy') {
